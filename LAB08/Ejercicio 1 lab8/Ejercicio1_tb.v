@@ -9,7 +9,6 @@ always
     #1 clk = ~clk;
 
 initial begin
-  #1
   $display("---------------------------------------");
   $display("Clk | reset | Enable | Non-Blocking (o Neto Bran) |        Load      |         Salida       ");
   $monitor("  %b     %b      %b                %b                       %b                 %b", clk, reset, En, NBL, load, s);
@@ -21,8 +20,8 @@ initial begin
   #1 reset = 0;
   #1 reset = 1;
   #1 reset = 0;
-  #1 NBL = 1; load = 12'b000000010000;
-  #1 NBL = 1; load = 12'b000000010000;
+  #1 NBL = 1; load = 12'b000010010010;
+  #1 NBL = 1; load = 12'b001100010000;
   #1 NBL = 1; En = 1;
   #1 En = 1;
 end

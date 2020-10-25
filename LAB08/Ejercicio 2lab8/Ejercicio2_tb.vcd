@@ -1,0 +1,51 @@
+$date
+	Sat Oct 24 16:12:29 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testbench $end
+$var wire 8 ! codigo [7:0] $end
+$var reg 12 " dire [11:0] $end
+$scope module MR $end
+$var wire 8 # codigo [7:0] $end
+$var wire 12 $ dire [11:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx $
+bx #
+bx "
+bx !
+$end
+#1
+b0 !
+b0 #
+b0 "
+b0 $
+#3
+b1 !
+b1 #
+b1 "
+b1 $
+#5
+b11111010 !
+b11111010 #
+b10 "
+b10 $
+#7
+b1 !
+b1 #
+b11 "
+b11 $
+#9
+b10000 !
+b10000 #
+b100 "
+b100 $
+#20

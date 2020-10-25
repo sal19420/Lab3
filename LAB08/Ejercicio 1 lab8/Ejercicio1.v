@@ -3,7 +3,7 @@
 
 module cont12(input wire clk, reset, En, NBL, input wire [11:0]load, output reg [11:0]s);
 
-  always @ (posedge clk or posedge reset or NBL or load)begin
+  always @ (posedge clk or posedge reset or NBL or load or En)begin
       if(reset) // Se resetea a 0
           s <= 12'b000000000000;
 
