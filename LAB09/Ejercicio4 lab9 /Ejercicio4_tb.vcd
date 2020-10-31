@@ -1,0 +1,49 @@
+$date
+	Fri Oct 30 12:57:14 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testbench $end
+$var wire 4 ! Y [0:3] $end
+$var reg 1 " EN $end
+$var reg 4 # I [0:3] $end
+$scope module BuTi $end
+$var wire 1 " EN $end
+$var wire 4 $ I [0:3] $end
+$var wire 4 % Y [0:3] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx %
+bx $
+bx #
+x"
+bx !
+$end
+#1
+bz !
+bz %
+b0 #
+b0 $
+0"
+#3
+b1 #
+b1 $
+#5
+b10 !
+b10 %
+b10 #
+b10 $
+1"
+#7
+b110 !
+b110 %
+b110 #
+b110 $
+#30
