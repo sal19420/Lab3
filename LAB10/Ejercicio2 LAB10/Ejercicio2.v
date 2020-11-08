@@ -12,7 +12,7 @@ assign Y2 = (EN) ? I2:4'bz;
 endmodule
 
 // ALU
-module ALUL10(input wire [3:0]A, input wire [3:0]B, input wire [2:0]COM, output wire C, Z, output reg [3:0]R, output reg [0:4]PM);
+module ALUL10(input wire [3:0]A, input wire [3:0]B, input wire [2:0]COM, output reg C, Z, output reg [3:0]R, output reg [4:0]PM);
 
 
     always @ (A or B or COM)begin
@@ -23,22 +23,22 @@ module ALUL10(input wire [3:0]A, input wire [3:0]B, input wire [2:0]COM, output 
                   PM = A;// deja pasar A
                   C = 1'b0;
                   Z = 1'b0;
-                  R = PM[0:3];
+                  R = PM[3:0];
               end
 
       3'b001: begin
                   PM = 5'b00000;
                   PM = A - B;// resta
-                  R = PM[1:4];
-                  C = PM[0];
+                  R = PM[3:0];
+                  C = PM[4];
                   Z = (PM == 5'b00000);
               end
 
       3'b011: begin
                   PM = 5'b00000;
                   PM = A + B;// resta
-                  R = PM[1:4];
-                  C = PM[0];
+                  R = PM[3:0];
+                  C = PM[4];
                   Z = (PM == 5'b00000);
               end
 
@@ -47,15 +47,15 @@ module ALUL10(input wire [3:0]A, input wire [3:0]B, input wire [2:0]COM, output 
                   PM = B;// deja pasar B
                   C = 1'b0;
                   Z = 1'b0;
-                  R = PM[0:3];
+                  R = PM[3:0];
               end
 
       3'b100: begin
                   PM = 5'b00000;
-                  PM = A ~| B;// Nor
+                  PM = ~(A & B);// Nor
                   C = 1'b0;
                   Z = 1'b0;
-                  R = PM[0:3];
+                  R = PM[3:0];
               end
       endcase
     end
@@ -85,8 +85,10 @@ endmodule
 
 
 
-module(input wire CLK, RESET, ENB1, ENB2, ENACU, input wire [0:3]BTI1, input wire [0:2]F, output wire [0:3]BTO2, output wire CC, ZC);
- wire [0:3]DB, [0:3]SALU, [0:3]SACCU;
+module CL10_2(input wire CLK, RESET, ENB1, ENB2, ENACU, input wire [0:3]BTI1, input wire [0:2]F, output wire [0:3]BTO2, output wire CC, ZC);
+ wire [0:3]DB;
+ wire [0:3]SALU;
+ wire [0:3]SACCU;
 
  BT_4BL10_1 B1(ENB1, BTI1, DB);
 
@@ -94,6 +96,6 @@ module(input wire CLK, RESET, ENB1, ENB2, ENACU, input wire [0:3]BTI1, input wir
 
  ACCU acu(CLK, RESET, ENACU, SALU, SACCU);
 
- BT_4BL10_2(ENB2, SALU, BTO2);
+ BT_4BL10_2 B2(ENB2, SALU, BTO2);
 
 endmodule

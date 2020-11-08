@@ -1,0 +1,308 @@
+$date
+	Sat Nov  7 21:43:45 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testbench $end
+$var wire 1 ! ZC $end
+$var wire 1 " CC $end
+$var wire 4 # BTO2 [0:3] $end
+$var reg 4 $ BTI1 [0:3] $end
+$var reg 1 % CLK $end
+$var reg 1 & ENACU $end
+$var reg 1 ' ENB1 $end
+$var reg 1 ( ENB2 $end
+$var reg 3 ) F [0:2] $end
+$var reg 1 * RESET $end
+$scope module cl2 $end
+$var wire 4 + BTI1 [0:3] $end
+$var wire 1 % CLK $end
+$var wire 1 & ENACU $end
+$var wire 1 ' ENB1 $end
+$var wire 1 ( ENB2 $end
+$var wire 3 , F [0:2] $end
+$var wire 1 * RESET $end
+$var wire 1 ! ZC $end
+$var wire 4 - SALU [0:3] $end
+$var wire 4 . SACCU [0:3] $end
+$var wire 4 / DB [0:3] $end
+$var wire 1 " CC $end
+$var wire 4 0 BTO2 [0:3] $end
+$scope module Alu $end
+$var wire 3 1 COM [2:0] $end
+$var wire 4 2 B [3:0] $end
+$var wire 4 3 A [3:0] $end
+$var reg 1 " C $end
+$var reg 5 4 PM [4:0] $end
+$var reg 4 5 R [3:0] $end
+$var reg 1 ! Z $end
+$upscope $end
+$scope module B1 $end
+$var wire 1 ' EN $end
+$var wire 4 6 I1 [0:3] $end
+$var wire 4 7 Y1 [0:3] $end
+$upscope $end
+$scope module B2 $end
+$var wire 1 ( EN $end
+$var wire 4 8 I2 [0:3] $end
+$var wire 4 9 Y2 [0:3] $end
+$upscope $end
+$scope module acu $end
+$var wire 1 % CLK $end
+$var wire 4 : D4 [0:3] $end
+$var wire 1 & EN $end
+$var wire 1 * RESET $end
+$var wire 4 ; Q4 [0:3] $end
+$scope module F4_1 $end
+$var wire 1 % CLK $end
+$var wire 2 < D2 [0:1] $end
+$var wire 1 & EN $end
+$var wire 1 * RESET $end
+$var wire 2 = Q2 [0:1] $end
+$scope module F2_1 $end
+$var wire 1 % CLK $end
+$var wire 1 > D $end
+$var wire 1 & EN $end
+$var wire 1 * RESET $end
+$var reg 1 ? Q $end
+$upscope $end
+$scope module F2_2 $end
+$var wire 1 % CLK $end
+$var wire 1 @ D $end
+$var wire 1 & EN $end
+$var wire 1 * RESET $end
+$var reg 1 A Q $end
+$upscope $end
+$upscope $end
+$scope module F4_2 $end
+$var wire 1 % CLK $end
+$var wire 2 B D2 [0:1] $end
+$var wire 1 & EN $end
+$var wire 1 * RESET $end
+$var wire 2 C Q2 [0:1] $end
+$scope module F2_1 $end
+$var wire 1 % CLK $end
+$var wire 1 D D $end
+$var wire 1 & EN $end
+$var wire 1 * RESET $end
+$var reg 1 E Q $end
+$upscope $end
+$scope module F2_2 $end
+$var wire 1 % CLK $end
+$var wire 1 F D $end
+$var wire 1 & EN $end
+$var wire 1 * RESET $end
+$var reg 1 G Q $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+xG
+xF
+xE
+xD
+bx C
+bx B
+xA
+x@
+x?
+x>
+bx =
+bx <
+bx ;
+bx :
+bx 9
+bx 8
+bx 7
+bx 6
+bx 5
+bx 4
+bx 3
+bx 2
+bx 1
+bx 0
+bx /
+bx .
+bx -
+bx ,
+bx +
+x*
+bx )
+x(
+x'
+x&
+x%
+bx $
+bx #
+x"
+x!
+$end
+#1
+0!
+0"
+b0xxxx 4
+bz #
+bz 0
+bz 9
+bz /
+bz 2
+bz 7
+b0 )
+b0 ,
+b0 1
+b0 $
+b0 +
+b0 6
+0&
+0(
+0'
+0*
+1%
+#2
+0>
+0@
+0D
+0F
+b0 <
+b0 B
+b0 -
+b0 5
+b0 8
+b0 :
+b0 4
+0G
+b0 C
+0E
+0A
+b0 .
+b0 3
+b0 ;
+b0 =
+0?
+0%
+1*
+#3
+1%
+0*
+#4
+1F
+b1 B
+b1 -
+b1 5
+b1 8
+b1 :
+b1 4
+b1 /
+b1 2
+b1 7
+0%
+b10 )
+b10 ,
+b10 1
+b1 $
+b1 +
+b1 6
+1'
+#5
+1D
+0F
+b10 B
+b1 .
+b1 3
+b1 ;
+b1 C
+1G
+1>
+b10 <
+b1010 -
+b1010 5
+b1010 8
+b1010 :
+b1010 4
+b1001 /
+b1001 2
+b1001 7
+b1010 #
+b1010 0
+b1010 9
+1%
+b11 )
+b11 ,
+b11 1
+b1001 $
+b1001 +
+b1001 6
+1&
+1(
+#6
+0>
+1@
+0D
+b100 #
+b100 0
+b100 9
+b1 <
+b0 B
+1"
+b100 -
+b100 5
+b100 8
+b100 :
+b10100 4
+b1101 /
+b1101 2
+b1101 7
+0%
+b1 )
+b1 ,
+b1 1
+b1101 $
+b1101 +
+b1101 6
+#7
+x>
+x@
+xD
+xF
+bx #
+bx 0
+bx 9
+bx <
+bx B
+x!
+x"
+bx -
+bx 5
+bx 8
+bx :
+bx 4
+bz /
+bz 2
+bz 7
+1%
+0&
+0'
+#8
+0%
+#9
+1%
+#10
+0%
+#11
+1%
+#12
+0%
+#13
+1%
+#14
+0%
+#15
+1%
