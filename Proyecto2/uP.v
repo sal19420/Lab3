@@ -12,18 +12,18 @@ endmodule
 
 module flipD2_F(input wire CLK, RESET, EN, input wire [0:1]D2, output wire [0:1]Q2);
 
-flipD1_F F2_1(CLK, RESET, EN, D2[0], Q2[0]);
-flipD1_F F2_2(CLK, RESET, EN, D2[1], Q2[1]);
+  flipD1_F F2_1(CLK, RESET, EN, D2[0], Q2[0]);
+  flipD1_F F2_2(CLK, RESET, EN, D2[1], Q2[1]);
 endmodule
 
 module flipD4_F(input wire CLK, RESET, EN, input wire [0:3]D4, output wire [0:3]Q4);
-flipD2_F F4_1(CLK, RESET, EN, D4[0:1], Q4[0:1]);
-flipD2_F F4_2(CLK, RESET, EN, D4[2:3], Q4[2:3]);
+  flipD2_F F4_1(CLK, RESET, EN, D4[0:1], Q4[0:1]);
+  flipD2_F F4_2(CLK, RESET, EN, D4[2:3], Q4[2:3]);
 endmodule
 
 module flipD8_F(input wire CLK, RESET, EN, input wire [0:7]D5, output wire [0:3]Q5, output wire [0:3]Q6);
-flipD4_F F8_1(CLK, RESET, EN, D5[0:3], Q5);
-flipD4_F F8_2(CLK, RESET, EN, D5[4:7], Q6);
+  flipD4_F F8_1(CLK, RESET, EN, D5[0:3], Q5);
+  flipD4_F F8_2(CLK, RESET, EN, D5[4:7], Q6);
 endmodule
 
 // Flags 2b
@@ -38,8 +38,8 @@ endmodule
 
 module flipD2_fl(input wire CLK, RESET, EN, input wire [1:0]D2, output wire Q2C, Q2Z);
 
-flipD1_flags F2_1(CLK, RESET, EN, D2[1], Q2C);
-flipD1_flags F2_2(CLK, RESET, EN, D2[0], Q2Z);
+  flipD1_flags F2_1(CLK, RESET, EN, D2[1], Q2C);
+  flipD1_flags F2_2(CLK, RESET, EN, D2[0], Q2Z);
 endmodule
 
 // Accu 4b
@@ -52,15 +52,15 @@ module flipD1_A(input wire CLK, RESET, EN, D, output reg Q);
   end
 endmodule
 
-module flipD2_A(input wire CLK, RESET, EN, input wire [0:1]D2, output wire [0:1]Q2);
+module flipD2_A(input wire CLK, RESET, EN, input wire [0:1]D2, output wire [0:1]Q2);      
 
-flipD1_A F2_1(CLK, RESET, EN, D2[0], Q2[0]);
-flipD1_A F2_2(CLK, RESET, EN, D2[1], Q2[1]);
+  flipD1_A F2_1(CLK, RESET, EN, D2[0], Q2[0]);
+  flipD1_A F2_2(CLK, RESET, EN, D2[1], Q2[1]);
 endmodule
 
 module ACCU(input wire CLK, RESET, EN, input wire [0:3]D4, output wire [0:3]Q4);
-flipD2_A F4_1(CLK, RESET, EN, D4[0:1], Q4[0:1]);
-flipD2_A F4_2(CLK, RESET, EN, D4[2:3], Q4[2:3]);
+  flipD2_A F4_1(CLK, RESET, EN, D4[0:1], Q4[0:1]);
+  flipD2_A F4_2(CLK, RESET, EN, D4[2:3], Q4[2:3]);
 endmodule
 
 // Outs 4b
@@ -75,13 +75,13 @@ endmodule
 
 module flipD2_O(input wire CLK, RESET, EN, input wire [0:1]D2, output wire [0:1]Q2);
 
-flipD1_O F2_1(CLK, RESET, EN, D2[0], Q2[0]);
-flipD1_O F2_2(CLK, RESET, EN, D2[1], Q2[1]);
+  flipD1_O F2_1(CLK, RESET, EN, D2[0], Q2[0]);
+  flipD1_O F2_2(CLK, RESET, EN, D2[1], Q2[1]);
 endmodule
 
 module OUT(input wire CLK, RESET, EN, input wire [0:3]D4, output wire [0:3]Q4);
-flipD2_O F4_1(CLK, RESET, EN, D4[0:1], Q4[0:1]);
-flipD2_O F4_2(CLK, RESET, EN, D4[2:3], Q4[2:3]);
+  flipD2_O F4_1(CLK, RESET, EN, D4[0:1], Q4[0:1]);
+  flipD2_O F4_2(CLK, RESET, EN, D4[2:3], Q4[2:3]);
 endmodule
 
 // Colocar el FFT de Phase
@@ -97,7 +97,7 @@ module flipD_T(input wire CLK, RESET, D, output reg Q);
 endmodule
 
 module Phase(input wire CLK, RESET, output wire Q);
-flipD_T FT(CLK, RESET, ~Q, Q);
+  flipD_T FT(CLK, RESET, ~Q, Q);
 endmodule
 
 // Program Counter 12b
@@ -186,19 +186,19 @@ endmodule
 
 module BT_4BL10_IN(input wire EN, input wire [0:3]I1, output wire [0:3]Y1);
 
-assign Y1 = (EN) ? I1:4'bz;
+  assign Y1 = (EN) ? I1:4'bz;
 endmodule
 
 // BUS Driver 2
 module BT_4BL10_O(input wire EN, input wire [0:3]I2, output wire [0:3]Y2);
 
-assign Y2 = (EN) ? I2:4'bz;
+  assign Y2 = (EN) ? I2:4'bz;
 endmodule
 
 // BUS Driver 3
 module BT_4BL10_A(input wire EN, input wire [0:3]I3, output wire [0:3]Y3);
 
-assign Y3 = (EN) ? I3:4'bz;
+  assign Y3 = (EN) ? I3:4'bz;
 endmodule
 
 // RAM
@@ -217,10 +217,6 @@ module RAM (input wire [0:11]address, input wire cs, we, output wire [0:3]data);
       end
 
 endmodule
-
-
-
-
 
 // ALU procesador
 module ALUL10_up(
@@ -251,28 +247,28 @@ endmodule
 // Circuito completo
 
 module uP(input wire clock, reset, input wire [3:0]pushbuttons, output wire phase, c_flag, z_flag, output wire [3:0]instr, output wire [3:0]oprnd, output wire [3:0]data_bus, output wire [3:0]FF_out, output wire [3:0]accu, output wire [7:0]program_byte, output wire [11:0]PC, output wire [11:0]address_RAM);
-wire [12:0]dec;
-wire ZE;
-wire C;
-wire [3:0]SALU;
-wire [6:0]J;
-assign J = {instr, c_flag, z_flag, phase};
-assign address_RAM = {oprnd, program_byte};
+  wire [12:0]dec;
+  wire ZE;
+  wire C;
+  wire [3:0]SALU;
+  wire [6:0]J;
+  assign J = {instr, c_flag, z_flag, phase};
+  assign address_RAM = {oprnd, program_byte};
 
 
 
-flipD8_F Fetch(.CLK(clock), .RESET(reset), .EN(~phase), .D5(program_byte), .Q5(instr), .Q6(oprnd));
-flipD2_fl flags(.CLK(clock), .RESET(reset), .EN(dec[9]), .D2({C, ZE}), .Q2C(c_flag), .Q2Z(z_flag));
-ACCU aaaacccuuuu(.CLK(clock), .RESET(reset), .EN(dec[10]), .D4(SALU), .Q4(accu));
-OUT out(.CLK(clock), .RESET(reset), .EN(dec[0]), .D4(data_bus), .Q4(FF_out));
-Phase fase(.CLK(clock), .RESET(reset), .Q(phase));
-cont12_uP contador(.clk(clock), .reset(reset), .En(dec[12]), .NBL(dec[11]), .load(address_RAM), .s(PC));
-PROM_uP prom(.dire(PC), .codigo(program_byte));
-DECODE code(.I(J), .O(dec));
-BT_4BL10_IN BT1(.EN(dec[2]), .I1(pushbuttons), .Y1(data_bus));
-BT_4BL10_O BT2(.EN(dec[1]), .I2(oprnd), .Y2(data_bus));
-BT_4BL10_A BT3(.EN(dec[3]), .I3(SALU), .Y3(data_bus));
-RAM ram(.address(address_RAM), .cs(dec[5]), .we(dec[4]), .data(data_bus));
-ALUL10_up alu(.A(accu), .B(data_bus), .COM(dec[8:6]), .carry(C), .zero(ZE), .R(SALU));
+  flipD8_F Fetch(.CLK(clock), .RESET(reset), .EN(~phase), .D5(program_byte), .Q5(instr), .Q6(oprnd));
+  flipD2_fl flags(.CLK(clock), .RESET(reset), .EN(dec[9]), .D2({C, ZE}), .Q2C(c_flag), .Q2Z(z_flag));
+  ACCU aaaacccuuuu(.CLK(clock), .RESET(reset), .EN(dec[10]), .D4(SALU), .Q4(accu));
+  OUT out(.CLK(clock), .RESET(reset), .EN(dec[0]), .D4(data_bus), .Q4(FF_out));
+  Phase fase(.CLK(clock), .RESET(reset), .Q(phase));
+  cont12_uP contador(.clk(clock), .reset(reset), .En(dec[12]), .NBL(dec[11]), .load(address_RAM), .s(PC));
+  PROM_uP prom(.dire(PC), .codigo(program_byte));
+  DECODE code(.I(J), .O(dec));
+  BT_4BL10_IN BT1(.EN(dec[2]), .I1(pushbuttons), .Y1(data_bus));
+  BT_4BL10_O BT2(.EN(dec[1]), .I2(oprnd), .Y2(data_bus));
+  BT_4BL10_A BT3(.EN(dec[3]), .I3(SALU), .Y3(data_bus));
+  RAM ram(.address(address_RAM), .cs(dec[5]), .we(dec[4]), .data(data_bus));
+  ALUL10_up alu(.A(accu), .B(data_bus), .COM(dec[8:6]), .carry(C), .zero(ZE), .R(SALU));
 
 endmodule

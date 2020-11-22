@@ -28,7 +28,7 @@ module testbench();
                 .address_RAM(address_RAM));
 
     initial
-        #1000 $finish;
+        #1100 $finish;
 
     always
         #5 clock = ~clock;
